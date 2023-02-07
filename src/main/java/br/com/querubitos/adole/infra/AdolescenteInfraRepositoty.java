@@ -1,5 +1,7 @@
 package br.com.querubitos.adole.infra;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.querubitos.adole.application.repository.AdolescenteRepository;
@@ -22,4 +24,10 @@ public class AdolescenteInfraRepositoty implements AdolescenteRepository {
 		return adolescente;
 	}
 
+	@Override
+	public List<Adolescente> buscaTodosAdolescentes() {
+		log.info("[inicia] ClienteInfraRepository - buscaTodosAdolescentes");
+		log.info("[finaliza] ClienteInfraRepository - buscaTodosAdolescentes");
+		return null;
+	}
 }

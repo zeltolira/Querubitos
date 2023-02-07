@@ -32,7 +32,8 @@ public class AdolescenteApplicationService implements AdolescenteService {
 	@Override
 	public List<AdolescenteListResponse> buscaTodosAdolescentes() {
 		log.info("[inicia] AdolescenteApplicationService - buscaTodosAdolescentes");
+		List<Adolescente> adolescentes = adolescenteRepository.buscaTodosAdolescentes();
 		log.info("[finaliza] AdolescenteApplicationService - buscaTodosAdolescentes");
-		return null;
+		return AdolescenteListResponse.converte(adolescentes);
 	}
 }
