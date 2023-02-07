@@ -12,7 +12,7 @@ public class AdolescenteRequest {
 
 	@NotBlank
 	private String nomeAdolescente;
-	@NotBlank
+	@NonNull
 	private LocalDate dataNascimento;
 	@NotBlank
 	private String celular;

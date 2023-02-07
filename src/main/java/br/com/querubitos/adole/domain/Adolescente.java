@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.querubitos.adole.application.api.AdolescenteRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ public class Adolescente {
 	private UUID idAdolescente;
 	@NotBlank
 	private String nomeAdolescente;
-	@NotBlank
+	@NonNull
 	private LocalDate dataNascimento;
 	@NotBlank
 	private String celular;
@@ -35,14 +36,11 @@ public class Adolescente {
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraultimaAlteracao;
 	
-	public Adolescente(@NotBlank String nomeAdolescente, @NotBlank LocalDate dataNascimento, @NotBlank String celular,
-			Sexo sexo) {
-		this.idAdolescente = UUID.randomUUID();
-		this.nomeAdolescente = nomeAdolescente;
-		this.dataNascimento = dataNascimento;
-		this.celular = celular;
-		this.sexo = sexo;
+	public Adolescente(AdolescenteRequest adolescenteRequest) {
+		this.nomeAdolescente = adolescenteRequest.getNomeAdolescente();
+		this.dataNascimento = adolescenteRequest.getDataNascimento();
+		this.celular = adolescenteRequest.getCelular();
+		this.sexo = adolescenteRequest.getSexo();
+		// TODO Auto-generated constructor stub
 	}
-	
-	
 }
