@@ -1,4 +1,5 @@
-package br.com.querubitos.adole.infra;
+
+		package br.com.querubitos.adole.infra;
 
 import java.util.List;
 
@@ -27,7 +28,8 @@ public class AdolescenteInfraRepositoty implements AdolescenteRepository {
 	@Override
 	public List<Adolescente> buscaTodosAdolescentes() {
 		log.info("[inicia] ClienteInfraRepository - buscaTodosAdolescentes");
+		List<Adolescente> todosAdolescentes = adolescenteSpringDataJPARepository.findAll();
 		log.info("[finaliza] ClienteInfraRepository - buscaTodosAdolescentes");
-		return null;
+		return todosAdolescentes;
 	}
 }
