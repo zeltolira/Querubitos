@@ -7,11 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/v1/adole")
 public interface AdolescenteAPI {
 
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	AdolescenteResponse postAdolescente(@RequestBody AdolescenteRequest adolescenteRequest);
+	AdolescenteResponse postAdolescente(@Valid @RequestBody AdolescenteRequest adolescenteRequest);
 }
