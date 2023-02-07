@@ -1,7 +1,10 @@
 package br.com.querubitos.adole.application.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import br.com.querubitos.adole.application.api.AdolescenteListResponse;
 import br.com.querubitos.adole.application.api.AdolescenteRequest;
 import br.com.querubitos.adole.application.api.AdolescenteResponse;
 import br.com.querubitos.adole.application.repository.AdolescenteRepository;
@@ -24,5 +27,12 @@ public class AdolescenteApplicationService implements AdolescenteService {
 		return AdolescenteResponse.builder()
 				.idAdolescente(adolescente.getIdAdolescente())
 				.build();
+	}
+
+	@Override
+	public List<AdolescenteListResponse> buscaTodosAdolescentes() {
+		log.info("[inicia] AdolescenteApplicationService - buscaTodosAdolescentes");
+		log.info("[finaliza] AdolescenteApplicationService - buscaTodosAdolescentes");
+		return null;
 	}
 }

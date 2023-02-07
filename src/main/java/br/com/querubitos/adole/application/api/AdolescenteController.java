@@ -26,8 +26,8 @@ public class AdolescenteController implements AdolescenteAPI {
 	@Override
 	public List<AdolescenteListResponse> getTodosAdolescentes() {
 		log.info("[inicia] AdolescenteController - getTodosAdolescentes");
+		List<AdolescenteListResponse> adolescentes = adolescenteService.buscaTodosAdolescentes(); 
 		log.info("[finaliza] AdolescenteController - getTodosAdolescentes");
-		return null;
+		return adolescentes;
 	}
-
 }
