@@ -1,6 +1,7 @@
 package br.com.querubitos.adole.application.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,5 +30,13 @@ public class AdolescenteController implements AdolescenteAPI {
 		List<AdolescenteListResponse> adolescentes = adolescenteService.buscaTodosAdolescentes(); 
 		log.info("[finaliza] AdolescenteController - getTodosAdolescentes");
 		return adolescentes;
+	}
+
+	@Override
+	public AdolescenteDetalhadoResponse getAdolescentesAtravesId(UUID idAdolescente) {
+		log.info("[inicia] AdolescenteController - getAdolescenteAtravesId");
+		log.info("[idAdolescente] {}", idAdolescente);
+		log.info("[finaliza] AdolescenteController - getAdolescenteAtravesId");
+		return null;
 	}
 }
