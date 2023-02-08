@@ -36,7 +36,8 @@ public class AdolescenteController implements AdolescenteAPI {
 	public AdolescenteDetalhadoResponse getAdolescentesAtravesId(UUID idAdolescente) {
 		log.info("[inicia] AdolescenteController - getAdolescenteAtravesId");
 		log.info("[idAdolescente] {}", idAdolescente);
+		AdolescenteDetalhadoResponse adolescenteDetalhado = adolescenteService.buscaAdolescenteAtravesId(idAdolescente);
 		log.info("[finaliza] AdolescenteController - getAdolescenteAtravesId");
-		return null;
+		return adolescenteDetalhado;
 	}
 }

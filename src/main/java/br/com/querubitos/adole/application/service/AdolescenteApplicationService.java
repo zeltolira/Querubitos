@@ -1,9 +1,11 @@
 package br.com.querubitos.adole.application.service;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import br.com.querubitos.adole.application.api.AdolescenteDetalhadoResponse;
 import br.com.querubitos.adole.application.api.AdolescenteListResponse;
 import br.com.querubitos.adole.application.api.AdolescenteRequest;
 import br.com.querubitos.adole.application.api.AdolescenteResponse;
@@ -35,5 +37,12 @@ public class AdolescenteApplicationService implements AdolescenteService {
 		List<Adolescente> adolescentes = adolescenteRepository.buscaTodosAdolescentes();
 		log.info("[finaliza] AdolescenteApplicationService - buscaTodosAdolescentes");
 		return AdolescenteListResponse.converte(adolescentes);
+	}
+
+	@Override
+	public AdolescenteDetalhadoResponse buscaAdolescenteAtravesId(UUID idAdolescente) {
+		log.info("[inicia] AdolescenteApplicationService - buscaAdolescenteAtravesId");
+		log.info("[finailiza] AdolescenteApplicationService - buscaAdolescenteAtravesId");
+		return null;
 	}
 }
