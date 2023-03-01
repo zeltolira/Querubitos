@@ -26,9 +26,7 @@ public class AdolescenteApplicationService implements AdolescenteService {
 		log.info("[inicia] AdolescenteApplicationService - criaAdolescente");
 		Adolescente adolescente = adolescenteRepository.salva(new Adolescente(adolescenteRequest));
 		log.info("[finaliza] AdolescenteApplicationService - criaAdolescente");
-		return AdolescenteResponse.builder()
-				.idAdolescente(adolescente.getIdAdolescente())
-				.build();
+		return AdolescenteResponse.builder().idAdolescente(adolescente.getIdAdolescente()).build();
 	}
 
 	@Override
@@ -42,7 +40,16 @@ public class AdolescenteApplicationService implements AdolescenteService {
 	@Override
 	public AdolescenteDetalhadoResponse buscaAdolescenteAtravesId(UUID idAdolescente) {
 		log.info("[inicia] AdolescenteApplicationService - buscaAdolescenteAtravesId");
+		Adolescente adolescente = adolescenteRepository.buscaAdolescenteAtrvesId(idAdolescente);
 		log.info("[finailiza] AdolescenteApplicationService - buscaAdolescenteAtravesId");
-		return null;
+		return new AdolescenteDetalhadoResponse(adolescente);
+	}
+
+	@Override
+	public void deletaAdolescenteAtravesId(UUID idAdolescente) {
+		log.info("[inicia] AdolescenteApplicationService - deletaAdolescenteAtravesId");
+		Adolescente adolescente = adolescenteRepository.buscaAdolescenteAtrvesId(idAdolescente);
+		adolescenteRepository.deletaAdolescente(adolescente);
+		log.info("[finaliza] AdolescenteApplicationService - deletaAdolescenteAtravesId");
 	}
 }

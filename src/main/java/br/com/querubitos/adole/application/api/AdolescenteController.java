@@ -40,4 +40,13 @@ public class AdolescenteController implements AdolescenteAPI {
 		log.info("[finaliza] AdolescenteController - getAdolescenteAtravesId");
 		return adolescenteDetalhado;
 	}
+
+	@Override
+	public void deletaAdolescenteAtravesId(UUID idAdolescente) {
+		log.info("[inicia] AdolescenteController - deletaAdolescenteAtravesId");
+		log.info("[idAdolescente] {}", idAdolescente);
+		adolescenteService.deletaAdolescenteAtravesId(idAdolescente);
+		log.info("[finaliza] AdolescenteController - deletaAdolescenteAtravesId");
+	
+	}
 }

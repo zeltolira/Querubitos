@@ -12,4 +12,5 @@ public interface AdolescenteService {
 	AdolescenteResponse criaAdolescente(AdolescenteRequest adolescenteRequest);
 	List<AdolescenteListResponse> buscaTodosAdolescentes();
 	AdolescenteDetalhadoResponse buscaAdolescenteAtravesId(UUID idAdolescente);
+	void deletaAdolescenteAtravesId(UUID idAdolescente);
 }

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.querubitos.adole.domain.Adolescente;
 import br.com.querubitos.adole.domain.Sexo;
 
 public class AdolescenteDetalhadoResponse {
@@ -13,4 +14,14 @@ public class AdolescenteDetalhadoResponse {
 	private String celular;
 	private Sexo sexo;
 	private LocalDateTime dataHoraDoCadastro;
+
+	
+	public AdolescenteDetalhadoResponse(Adolescente adolescente) {
+		this.idAdolescente = adolescente.getIdAdolescente();
+		this.nomeAdolescente = adolescente.getNomeAdolescente();
+		this.dataNascimento = adolescente.getDataNascimento();
+		this.celular = adolescente.getCelular();
+		this.sexo = adolescente.getSexo();
+		this.dataHoraDoCadastro = adolescente.getDataHoraDoCadastro();	
+	}	
 }

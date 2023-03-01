@@ -2,6 +2,8 @@
 		package br.com.querubitos.adole.infra;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
@@ -19,17 +21,33 @@ public class AdolescenteInfraRepositoty implements AdolescenteRepository {
 
 	@Override
 	public Adolescente salva(Adolescente adolescente) {
-		log.info("[inicia] ClienteInfraRepository - salva");
+		log.info("[inicia] AdolescenteInfraRepositoty - salva");
 		adolescenteSpringDataJPARepository.save(adolescente);
-		log.info("[finaliza] ClienteInfraRepository - salva");
+		log.info("[finaliza] AdolescenteInfraRepositoty - salva");
 		return adolescente;
 	}
 
 	@Override
 	public List<Adolescente> buscaTodosAdolescentes() {
-		log.info("[inicia] ClienteInfraRepository - buscaTodosAdolescentes");
+		log.info("[inicia] AdolescenteInfraRepositoty - buscaTodosAdolescentes");
 		List<Adolescente> todosAdolescentes = adolescenteSpringDataJPARepository.findAll();
-		log.info("[finaliza] ClienteInfraRepository - buscaTodosAdolescentes");
+		log.info("[finaliza] AdolescenteInfraRepositoty - buscaTodosAdolescentes");
 		return todosAdolescentes;
+	}
+
+	@Override
+	public Adolescente buscaAdolescenteAtrvesId(UUID idAdolescente) {
+		log.info("[inicia] AdolescenteInfraRepositoty - buscaAdolescenteAtrvesId");
+		Adolescente adolescente = adolescenteSpringDataJPARepository.findById(idAdolescente)
+				.orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+		log.info("[finaliza] AdolescenteInfraRepositoty - buscaAdolescenteAtrvesId");
+		return adolescente;
+	}
+
+	@Override
+	public void deletaAdolescente(Adolescente adolescente) {
+		log.info("[inicia] AdolescenteInfraRepositoty - deletaAdolescente");
+		adolescenteSpringDataJPARepository.delete(adolescente);
+		log.info("[finaliza] AdolescenteInfraRepositoty - deletaAdolescente");
 	}
 }
