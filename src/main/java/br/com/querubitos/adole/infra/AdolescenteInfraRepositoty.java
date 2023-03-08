@@ -1,14 +1,14 @@
-
-		package br.com.querubitos.adole.infra;
+package br.com.querubitos.adole.infra;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import br.com.querubitos.adole.application.repository.AdolescenteRepository;
 import br.com.querubitos.adole.domain.Adolescente;
+import br.com.querubitos.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -39,7 +39,7 @@ public class AdolescenteInfraRepositoty implements AdolescenteRepository {
 	public Adolescente buscaAdolescenteAtrvesId(UUID idAdolescente) {
 		log.info("[inicia] AdolescenteInfraRepositoty - buscaAdolescenteAtrvesId");
 		Adolescente adolescente = adolescenteSpringDataJPARepository.findById(idAdolescente)
-				.orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Adolescente não encontrado!"));
 		log.info("[finaliza] AdolescenteInfraRepositoty - buscaAdolescenteAtrvesId");
 		return adolescente;
 	}

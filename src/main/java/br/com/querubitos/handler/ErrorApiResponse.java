@@ -10,7 +10,7 @@ import lombok.Getter;
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
-public class ErrorAPIResponse {
+public class ErrorApiResponse {
 	private String message;
 	
 	@JsonInclude(JsonInclude.Include.NON_EMPTY)
