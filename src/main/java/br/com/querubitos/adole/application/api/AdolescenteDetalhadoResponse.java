@@ -6,7 +6,9 @@ import java.util.UUID;
 
 import br.com.querubitos.adole.domain.Adolescente;
 import br.com.querubitos.adole.domain.Sexo;
+import lombok.Value;
 
+@Value
 public class AdolescenteDetalhadoResponse {
 	private UUID idAdolescente;
 	private String nomeAdolescente;
