@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.querubitos.adole.application.service.AdolescenteService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -48,5 +49,12 @@ public class AdolescenteController implements AdolescenteAPI {
 		adolescenteService.deletaAdolescenteAtravesId(idAdolescente);
 		log.info("[finaliza] AdolescenteController - deletaAdolescenteAtravesId");
 	
+	}
+
+	@Override
+	public void patchAlterraAdolescente(UUID idAdolescente, @Valid AdolescenteAlteracaoRequest adolescenteAlteracaoRequest) {
+		log.info("[inicia] AdolescenteController - patchAlterraAdolescente");
+		log.info("[idAdolescente] {}", idAdolescente);		
+		log.info("[finaliza] AdolescenteController - patchAlterraAdolescente");
 	}
 }
