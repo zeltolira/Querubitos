@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.querubitos.adole.application.api.AdolescenteAlteracaoRequest;
 import br.com.querubitos.adole.application.api.AdolescenteRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -41,6 +42,14 @@ public class Adolescente {
 		this.dataNascimento = adolescenteRequest.getDataNascimento();
 		this.celular = adolescenteRequest.getCelular();
 		this.sexo = adolescenteRequest.getSexo();
-		// TODO Auto-generated constructor stub
+		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
+
+	public void altera(AdolescenteAlteracaoRequest adolescenteRequest) {
+		this.nomeAdolescente = adolescenteRequest.getNomeAdolescente();
+		this.dataNascimento = adolescenteRequest.getDataNascimento();
+		this.celular = adolescenteRequest.getCelular();
+		this.sexo = adolescenteRequest.getSexo();
+		this.dataHoraultimaAlteracao = LocalDateTime.now();
 	}
 }

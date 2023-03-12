@@ -38,5 +38,5 @@ public interface AdolescenteAPI {
 	
 	@PatchMapping(value = "/{idAdolescente}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	void patchAlterraAdolescente(@PathVariable UUID idAdolescente, @Valid @RequestBody AdolescenteAlteracaoRequest adolescenteAlteracaoRequest);
+	void patchAlteraAdolescente(@PathVariable UUID idAdolescente, @Valid @RequestBody AdolescenteAlteracaoRequest adolescenteAlteracaoRequest);
 }

@@ -52,9 +52,10 @@ public class AdolescenteController implements AdolescenteAPI {
 	}
 
 	@Override
-	public void patchAlterraAdolescente(UUID idAdolescente, @Valid AdolescenteAlteracaoRequest adolescenteAlteracaoRequest) {
+	public void patchAlteraAdolescente(UUID idAdolescente, @Valid AdolescenteAlteracaoRequest adolescenteAlteracaoRequest) {
 		log.info("[inicia] AdolescenteController - patchAlterraAdolescente");
 		log.info("[idAdolescente] {}", idAdolescente);		
+		adolescenteService.patchAlteraAdolescente(idAdolescente, adolescenteAlteracaoRequest);
 		log.info("[finaliza] AdolescenteController - patchAlterraAdolescente");
 	}
 }

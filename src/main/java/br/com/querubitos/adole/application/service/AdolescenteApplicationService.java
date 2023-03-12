@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import br.com.querubitos.adole.application.api.AdolescenteAlteracaoRequest;
 import br.com.querubitos.adole.application.api.AdolescenteDetalhadoResponse;
 import br.com.querubitos.adole.application.api.AdolescenteListResponse;
 import br.com.querubitos.adole.application.api.AdolescenteRequest;
@@ -51,5 +52,15 @@ public class AdolescenteApplicationService implements AdolescenteService {
 		Adolescente adolescente = adolescenteRepository.buscaAdolescenteAtrvesId(idAdolescente);
 		adolescenteRepository.deletaAdolescente(adolescente);
 		log.info("[finaliza] AdolescenteApplicationService - deletaAdolescenteAtravesId");
+	}
+
+	@Override
+	public void patchAlteraAdolescente(UUID idAdolescente, AdolescenteAlteracaoRequest adolescenteAlteracaoRequest) {
+		log.info("[inicia] AdolescenteApplicationService - patchAlteraAdolescente");
+		Adolescente adolescente = adolescenteRepository.buscaAdolescenteAtrvesId(idAdolescente);
+		adolescente.altera(adolescenteAlteracaoRequest);
+		adolescenteRepository.salva(adolescente);
+		log.info("[finaliza] AdolescenteApplicationService - patchAlteraAdolescente");
+		
 	}
 }
