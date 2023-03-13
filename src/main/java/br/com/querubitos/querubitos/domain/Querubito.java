@@ -28,18 +28,25 @@ public class Querubito {
 	@Enumerated(EnumType.STRING)
 	private EstudoDiario estudoDiario;
 	@NotNull
+	@Enumerated(EnumType.STRING)
 	private ParticipacaoClasse participacaoClasse;
 	@NotNull
+	@Enumerated(EnumType.STRING)
 	private ParticipacaoExternas participacaoExternas;
 	@NotNull
+	@Enumerated(EnumType.STRING)
 	private ParticipacaoDesafios participacaoDesafios;
 	@NotNull
+	@Enumerated(EnumType.STRING)
 	private ParticipacaoCultos participacaoCultos;
 	@NotNull
+	@Enumerated(EnumType.STRING)
 	private Quiz quiz;
 	@NotNull
+	@Enumerated(EnumType.STRING)
 	private Visitantes_amigos visitantes_amigos;
 	@NotNull
+	@Enumerated(EnumType.STRING)
 	private Intercambio intercambio;
 	@NotNull
 	private Integer extra;
