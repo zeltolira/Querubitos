@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@NoArgsConstructor (access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Querubito {
 
 	@Id
@@ -28,19 +28,19 @@ public class Querubito {
 	@Enumerated(EnumType.STRING)
 	private EstudoDiario estudoDiario;
 	@NotNull
-	private Integer participacaoClasse;
+	private ParticipacaoClasse participacaoClasse;
 	@NotNull
-	private Integer participacaoExternas;
+	private ParticipacaoExternas participacaoExternas;
 	@NotNull
-	private Integer participacaoDesafios;
+	private ParticipacaoDesafios participacaoDesafios;
 	@NotNull
-	private Integer participacaoCultos;
+	private ParticipacaoCultos participacaoCultos;
 	@NotNull
-	private Integer quiz;
+	private Quiz quiz;
 	@NotNull
-	private Integer visitantes_amigos;
+	private Visitantes_amigos visitantes_amigos;
 	@NotNull
-	private Integer intercambio;
+	private Intercambio intercambio;
 	@NotNull
 	private Integer extra;
 	@NotNull
