@@ -5,6 +5,8 @@ import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,21 +25,24 @@ public class Querubito {
 	@Column(columnDefinition = "uuid", name = "idQuerubito", updatable = false, unique = true, nullable = false)
 	private UUID idQuerubito;
 	@NotNull
-	private Integer estudoDiario;
+	@Enumerated(EnumType.STRING)
+	private EstudoDiario estudoDiario;
 	@NotNull
 	private Integer participacaoClasse;
 	@NotNull
-	private Integer Externas;
+	private Integer participacaoExternas;
 	@NotNull
-	private Integer Desafios;
+	private Integer participacaoDesafios;
 	@NotNull
-	private Integer  Cultos;
+	private Integer participacaoCultos;
 	@NotNull
-	private Integer Quiz;
+	private Integer quiz;
 	@NotNull
-	private Integer Visitantes_amigos;
+	private Integer visitantes_amigos;
 	@NotNull
-	private Integer Intercambio;
+	private Integer intercambio;
+	@NotNull
+	private Integer extra;
 	@NotNull
 	private Integer desobediencia;
 
