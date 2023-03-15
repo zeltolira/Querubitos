@@ -20,7 +20,7 @@ import lombok.extern.log4j.Log4j2;
 @RequiredArgsConstructor
 public class QuerubitoApplicationService implements QuerubitoService {
 	private final AdolescenteService adolescenteService;
-	private final QuerubitoRespository querubitoRepository;
+	private final QuerubitoRepository querubitoRepository;
 	
 	@Override
 	public QuerubitoResponse criaQuerubito(UUID idAdolescente, @Valid QuerubitoRequest querubitoRequest) {
@@ -35,8 +35,9 @@ public class QuerubitoApplicationService implements QuerubitoService {
 	public List<QuerubitoListResponse> buscaQuerubitosDoAdolescenteComID(UUID idAdolescente) {
 		log.info("[inicia] QuerubitoApplicationService - buscaQuerubitosDoAdolescenteComID");
 		adolescenteService.buscaAdolescenteAtravesId(idAdolescente);
+		List<Querubitos> querubitosDoAdolescente = querubitoRepository.buscaQuerubitosDoAdolescenteComID(idAdolescente); 
 		log.info("[finaliza] QuerubitoApplicationService - buscaQuerubitosDoAdolescenteComID");
-		return null;
+		return QuerubitoResponse.converte(querubitosDoAdolescente);
 	}
 
 }
