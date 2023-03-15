@@ -32,8 +32,9 @@ public class QuerubitoController implements QuerubitoAPI {
 		// TODO Auto-generated method stub
 		log.info("[inicia] QuerubitoController - getQuerubitosDoAdolecente");
 		log.info("[idAdolescente] {}, idAdolescente");
+		List<QuerubitoListResponse> querubitosDoAdolescente = querubitoService.buscaQuerubitosDoAdolescenteComID(idAdolescente);
 		log.info("[finaliza] QuerubitoController - getQuerubitosDoAdolecente");
-		return null;
+		return querubitosDoAdolescente;
 	}
 
 }
