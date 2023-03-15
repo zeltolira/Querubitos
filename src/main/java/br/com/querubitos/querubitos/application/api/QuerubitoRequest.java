@@ -1,5 +1,7 @@
 package br.com.querubitos.querubitos.application.api;
 
+import javax.validation.constraints.NotNull;
+
 import br.com.querubitos.querubitos.domain.EstudoDiario;
 import br.com.querubitos.querubitos.domain.Intercambio;
 import br.com.querubitos.querubitos.domain.ParticipacaoClasse;
@@ -8,7 +10,6 @@ import br.com.querubitos.querubitos.domain.ParticipacaoDesafios;
 import br.com.querubitos.querubitos.domain.ParticipacaoExternas;
 import br.com.querubitos.querubitos.domain.Quiz;
 import br.com.querubitos.querubitos.domain.Visitantes_amigos;
-import jakarta.validation.constraints.NotNull;
 import lombok.Value;
 
 @Value
