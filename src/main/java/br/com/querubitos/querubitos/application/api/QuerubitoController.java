@@ -1,5 +1,6 @@
 package br.com.querubitos.querubitos.application.api;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.validation.Valid;
@@ -24,6 +25,15 @@ public class QuerubitoController implements QuerubitoAPI {
 		QuerubitoResponse querubito = querubitoService.criaQuerubito(idAdolescente, querubitoRequest);
 		log.info("[finaliza] QuerubitoController - postQuerubito");
 		return querubito;
+	}
+
+	@Override
+	public List<QuerubitoListResponse> getQuerubitosDoAdolecente(UUID idAdolescente) {
+		// TODO Auto-generated method stub
+		log.info("[inicia] QuerubitoController - getQuerubitosDoAdolecente");
+		log.info("[idAdolescente] {}, idAdolescente");
+		log.info("[finaliza] QuerubitoController - getQuerubitosDoAdolecente");
+		return null;
 	}
 
 }
