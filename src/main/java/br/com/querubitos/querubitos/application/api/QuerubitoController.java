@@ -42,9 +42,9 @@ public class QuerubitoController implements QuerubitoAPI {
 			UUID idQuerubito) {
 		log.info("[inicia] QuerubitoController - getQuerubitoDoAdolescenteAtravesId");
 		log.info("[idAdolescente] {} - [idQuerubito] {} - idAdolescente, idQuerubito");
+		QuerubitoDoAdolescenteDetalhadoResponse querubito = querubitoService.buscaQuerubitosDoAdolescenteComID(idAdolescente, idQuerubito);
 		log.info("[finaliza] QuerubitoController - getQuerubitoDoAdolescenteAtravesId");
-
-		return null;
+		return querubito;
 	}
 
 }

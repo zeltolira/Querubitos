@@ -3,8 +3,6 @@ package br.com.querubitos.querubitos.application.api;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import javax.validation.constraints.NotNull;
-
 import br.com.querubitos.querubitos.domain.EstudoDiario;
 import br.com.querubitos.querubitos.domain.Intercambio;
 import br.com.querubitos.querubitos.domain.ParticipacaoClasse;

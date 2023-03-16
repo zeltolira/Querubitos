@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import br.com.querubitos.adole.application.service.AdolescenteService;
+import br.com.querubitos.querubitos.application.api.QuerubitoDoAdolescenteDetalhadoResponse;
 import br.com.querubitos.querubitos.application.api.QuerubitoListResponse;
 import br.com.querubitos.querubitos.application.api.QuerubitoRequest;
 import br.com.querubitos.querubitos.application.api.QuerubitoResponse;
@@ -38,6 +39,14 @@ public class QuerubitoApplicationService implements QuerubitoService {
 		List<Querubitos> querubitosDoAdolescente = querubitoRepository.buscaQuerubitosDoAdolescenteComID(idAdolescente); 
 		log.info("[finaliza] QuerubitoApplicationService - buscaQuerubitosDoAdolescenteComID");
 		return QuerubitoListResponse.converte(querubitosDoAdolescente);
+	}
+
+	@Override
+	public QuerubitoDoAdolescenteDetalhadoResponse buscaQuerubitosDoAdolescenteComID(UUID idAdolescente,
+			UUID idQuerubito) {
+		log.info("[inicia] QuerubitoApplicationService - buscaQuerubitosDoAdolescenteComID");
+		log.info("[finaliza] QuerubitoApplicationService - buscaQuerubitosDoAdolescenteComID");
+		return null;
 	}
 
 }
