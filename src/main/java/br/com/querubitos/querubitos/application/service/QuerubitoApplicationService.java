@@ -37,7 +37,7 @@ public class QuerubitoApplicationService implements QuerubitoService {
 		adolescenteService.buscaAdolescenteAtravesId(idAdolescente);
 		List<Querubitos> querubitosDoAdolescente = querubitoRepository.buscaQuerubitosDoAdolescenteComID(idAdolescente); 
 		log.info("[finaliza] QuerubitoApplicationService - buscaQuerubitosDoAdolescenteComID");
-		return QuerubitoResponse.converte(querubitosDoAdolescente);
+		return QuerubitoListResponse.converte(querubitosDoAdolescente);
 	}
 
 }
