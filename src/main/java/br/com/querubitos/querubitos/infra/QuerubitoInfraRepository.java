@@ -28,8 +28,9 @@ public class QuerubitoInfraRepository implements QuerubitoRepository {
 	@Override
 	public List<Querubitos> buscaQuerubitosDoAdolescenteComID(UUID idAdolescente) {
 		log.info("[inicia] QuerubitoInfraRepository - buscaQuerubitosDoAdolescenteComID");
+		var querubitos = querubitoSpringDataJPARepository.findByIdAdolescenteRecebedor(idAdolescente);
 		log.info("[finaliza] QuerubitoInfraRepository - buscaQuerubitosDoAdolescenteComID");
-		return null;
+		return querubitos;
 	}
 
 }
