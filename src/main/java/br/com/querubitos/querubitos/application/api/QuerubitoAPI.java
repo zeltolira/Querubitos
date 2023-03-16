@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.querubitos.adole.application.api.AdolescenteDetalhadoResponse;
-
 @RestController
 @RequestMapping("/v1/adole/{idAdolescente}/querubito")
 public interface QuerubitoAPI {
@@ -31,5 +29,5 @@ public interface QuerubitoAPI {
 	
 	@GetMapping(value = "/{idQuerubito}")
 	@ResponseStatus(code = HttpStatus.OK)
-	AdolescenteDetalhadoResponse getAdolescentesAtravesId(@PathVariable UUID idAdolescente, @PathVariable UUID idQuerubito);
+	QuerubitoDoAdolescenteDetalhadoResponse getQuerubitoDoAdolescenteAtravesId(@PathVariable UUID idAdolescente, @PathVariable UUID idQuerubito);
 }

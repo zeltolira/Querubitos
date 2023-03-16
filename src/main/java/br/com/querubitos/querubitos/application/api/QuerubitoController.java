@@ -37,4 +37,14 @@ public class QuerubitoController implements QuerubitoAPI {
 		return querubitosDoAdolescente;
 	}
 
+	@Override
+	public QuerubitoDoAdolescenteDetalhadoResponse getQuerubitoDoAdolescenteAtravesId(UUID idAdolescente,
+			UUID idQuerubito) {
+		log.info("[inicia] QuerubitoController - getQuerubitoDoAdolescenteAtravesId");
+		log.info("[idAdolescente] {} - [idQuerubito] {} - idAdolescente, idQuerubito");
+		log.info("[finaliza] QuerubitoController - getQuerubitoDoAdolescenteAtravesId");
+
+		return null;
+	}
+
 }
