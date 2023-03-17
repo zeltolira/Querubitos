@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import br.com.querubitos.adole.application.service.AdolescenteService;
+import br.com.querubitos.querubitos.application.api.QuerubitoAlteracaoRequest;
 import br.com.querubitos.querubitos.application.api.QuerubitoDoAdolescenteDetalhadoResponse;
 import br.com.querubitos.querubitos.application.api.QuerubitoListResponse;
 import br.com.querubitos.querubitos.application.api.QuerubitoRequest;
@@ -58,6 +59,18 @@ public class QuerubitoApplicationService implements QuerubitoService {
 		Querubitos querubito = querubitoRepository.buscaQuerubitoPeloId(idQuerubito);
 		querubitoRepository.deletaQuerubito(querubito);
 		log.info("[finaliza] QuerubitoApplicationService - deletaQuerubitoClienteComId");
+		
+	}
+
+	@Override
+	public void alteraQuerubitosDoAdolescenteComID(UUID idAdolescente, UUID idQuerubito,
+			@Valid QuerubitoAlteracaoRequest querubitoAlteracaoRequest) {
+		log.info("[inicia] QuerubitoApplicationService - alteraQuerubitosDoAdolescenteComID");
+		adolescenteService.buscaAdolescenteAtravesId(idAdolescente);
+		Querubitos querubito = querubitoRepository.buscaQuerubitoPeloId(idQuerubito);
+		querubito.altera(querubitoAlteracaoRequest);
+		querubitoRepository.salvaQuerubito(querubito);
+		log.info("[finaliza] QuerubitoApplicationService - alteraQuerubitosDoAdolescenteComID");
 		
 	}
 

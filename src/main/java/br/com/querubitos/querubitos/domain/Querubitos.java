@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import br.com.querubitos.querubitos.application.api.QuerubitoAlteracaoRequest;
 import br.com.querubitos.querubitos.application.api.QuerubitoRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -69,4 +70,17 @@ public class Querubitos {
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
 
+	public void altera(@Valid QuerubitoAlteracaoRequest querubitoRequest) {
+		this.estudoDiario = querubitoRequest.getEstudoDiario();
+		this.participacaoClasse = querubitoRequest.getParticipacaoClasse();
+		this.participacaoExternas = querubitoRequest.getParticipacaoExternas();
+		this.participacaoDesafios = querubitoRequest.getParticipacaoDesafios();
+		this.participacaoCultos = querubitoRequest.getParticipacaoCultos();
+		this.quiz = querubitoRequest.getQuiz();
+		this.visitantes_amigos = querubitoRequest.getVisitantes_amigos();
+		this.intercambio = querubitoRequest.getIntercambio();
+		this.extra = querubitoRequest.getExtra();
+		this.desobediencia = querubitoRequest.getDesobediencia();
+		this.dataHoraultimaAlteracao = LocalDateTime.now();		
+	}
 }

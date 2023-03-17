@@ -60,6 +60,7 @@ public class QuerubitoController implements QuerubitoAPI {
 			@Valid QuerubitoAlteracaoRequest querubitoAlteracaoRequest) {
 		log.info("[inicia] QuerubitoController - patchQuerubito");
 		log.info("[idAdolescente] {} - [idQuerubito] {} - idAdolescente, idQuerubito");
+		querubitoService.alteraQuerubitosDoAdolescenteComID(idAdolescente, idQuerubito, querubitoAlteracaoRequest);
 		log.info("[finaliza] QuerubitoController - patchQuerubito");		
 	}
 

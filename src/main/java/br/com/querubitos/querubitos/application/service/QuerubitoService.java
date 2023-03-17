@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 
+import br.com.querubitos.querubitos.application.api.QuerubitoAlteracaoRequest;
 import br.com.querubitos.querubitos.application.api.QuerubitoDoAdolescenteDetalhadoResponse;
 import br.com.querubitos.querubitos.application.api.QuerubitoListResponse;
 import br.com.querubitos.querubitos.application.api.QuerubitoRequest;
@@ -15,4 +16,6 @@ public interface QuerubitoService {
 	List<QuerubitoListResponse> buscaQuerubitosDoAdolescenteComID(UUID idAdolescente);
 	QuerubitoDoAdolescenteDetalhadoResponse buscaQuerubitosDoAdolescenteComID(UUID idAdolescente, UUID idQuerubito);
 	void deletaQuerubitoClienteComId(UUID idAdolescente, UUID idQuerubito);
+	void alteraQuerubitosDoAdolescenteComID(UUID idAdolescente, UUID idQuerubito,
+			@Valid QuerubitoAlteracaoRequest querubitoAlteracaoRequest);
 }
