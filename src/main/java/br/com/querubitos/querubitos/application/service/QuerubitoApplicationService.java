@@ -45,8 +45,10 @@ public class QuerubitoApplicationService implements QuerubitoService {
 	public QuerubitoDoAdolescenteDetalhadoResponse buscaQuerubitosDoAdolescenteComID(UUID idAdolescente,
 			UUID idQuerubito) {
 		log.info("[inicia] QuerubitoApplicationService - buscaQuerubitosDoAdolescenteComID");
+		adolescenteService.buscaAdolescenteAtravesId(idAdolescente);
+		Querubitos querubito = querubitoRepository.buscaQuerubitoPeloId(idQuerubito);
 		log.info("[finaliza] QuerubitoApplicationService - buscaQuerubitosDoAdolescenteComID");
-		return null;
+		return new QuerubitoDoAdolescenteDetalhadoResponse(querubito);
 	}
 
 }
