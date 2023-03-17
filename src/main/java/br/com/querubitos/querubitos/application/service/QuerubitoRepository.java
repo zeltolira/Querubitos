@@ -9,4 +9,5 @@ public interface QuerubitoRepository {
 	Querubitos salvaQuerubito(Querubitos querubito);
 	List<Querubitos> buscaQuerubitosDoAdolescenteComID(UUID idAdolescente);
 	Querubitos buscaQuerubitoPeloId(UUID idQuerubito);
+	void deletaQuerubito(Querubitos querubito);
 }

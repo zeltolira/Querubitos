@@ -54,6 +54,9 @@ public class QuerubitoApplicationService implements QuerubitoService {
 	@Override
 	public void deletaQuerubitoClienteComId(UUID idAdolescente, UUID idQuerubito) {
 		log.info("[inicia] QuerubitoApplicationService - deletaQuerubitoClienteComId");
+		adolescenteService.buscaAdolescenteAtravesId(idAdolescente);
+		Querubitos querubito = querubitoRepository.buscaQuerubitoPeloId(idQuerubito);
+		querubitoRepository.deletaQuerubito(querubito);
 		log.info("[finaliza] QuerubitoApplicationService - deletaQuerubitoClienteComId");
 		
 	}

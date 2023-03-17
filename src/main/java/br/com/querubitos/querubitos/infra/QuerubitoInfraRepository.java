@@ -44,4 +44,12 @@ public class QuerubitoInfraRepository implements QuerubitoRepository {
 		return querubito;
 	}
 
+	@Override
+	public void deletaQuerubito(Querubitos querubito) {
+		log.info("[inicia] QuerubitoInfraRepository - deletaQuerubito");
+		querubitoSpringDataJPARepository.delete(querubito);
+		log.info("[finaliza] QuerubitoInfraRepository - deletaQuerubito");
+		
+	}
+
 }
