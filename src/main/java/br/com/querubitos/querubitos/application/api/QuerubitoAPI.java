@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,4 +36,9 @@ public interface QuerubitoAPI {
 	@DeleteMapping(value = "/{idQuerubito}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	void deletaQuerubitoClienteComId(@PathVariable UUID idCliente, @PathVariable UUID idPet);
+	
+	@PatchMapping(value = "/{idQuerubito}")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	void patchQuerubito(@PathVariable UUID idAdolescente, @PathVariable UUID idQuerubito,
+			@Valid @RequestBody QuerubitoAlteracaoRequest querubitoAlteracaoRequest);
 }

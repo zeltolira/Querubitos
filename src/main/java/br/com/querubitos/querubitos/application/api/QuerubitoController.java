@@ -49,10 +49,18 @@ public class QuerubitoController implements QuerubitoAPI {
 
 	@Override
 	public void deletaQuerubitoClienteComId(UUID idAdolescente, UUID idQuerubito) {
-			log.info("[inicia] PetController - deletaQuerubitoClienteAtravesId");
+			log.info("[inicia] QuerubitoController - deletaQuerubitoClienteAtravesId");
 			log.info("[idAdolescente] {} - [idQuerubito] {} - idAdolescente, idQuerubito");
 			querubitoService.deletaQuerubitoClienteComId(idAdolescente, idQuerubito);
-			log.info("[finaliza] PetController - deletaQuerubitoClienteAtravesId");		
+			log.info("[finaliza] QuerubitoController - deletaQuerubitoClienteAtravesId");		
+	}
+
+	@Override
+	public void patchQuerubito(UUID idAdolescente, UUID idQuerubito,
+			@Valid QuerubitoAlteracaoRequest querubitoAlteracaoRequest) {
+		log.info("[inicia] QuerubitoController - patchQuerubito");
+		log.info("[idAdolescente] {} - [idQuerubito] {} - idAdolescente, idQuerubito");
+		log.info("[finaliza] QuerubitoController - patchQuerubito");		
 	}
 
 }
