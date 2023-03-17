@@ -51,4 +51,11 @@ public class QuerubitoApplicationService implements QuerubitoService {
 		return new QuerubitoDoAdolescenteDetalhadoResponse(querubito);
 	}
 
+	@Override
+	public void deletaQuerubitoClienteComId(UUID idAdolescente, UUID idQuerubito) {
+		log.info("[inicia] QuerubitoApplicationService - deletaQuerubitoClienteComId");
+		log.info("[finaliza] QuerubitoApplicationService - deletaQuerubitoClienteComId");
+		
+	}
+
 }

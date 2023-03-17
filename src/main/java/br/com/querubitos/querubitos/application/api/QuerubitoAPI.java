@@ -6,6 +6,7 @@ import java.util.UUID;
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,4 +31,8 @@ public interface QuerubitoAPI {
 	@GetMapping(value = "/{idQuerubito}")
 	@ResponseStatus(code = HttpStatus.OK)
 	QuerubitoDoAdolescenteDetalhadoResponse getQuerubitoDoAdolescenteAtravesId(@PathVariable UUID idAdolescente, @PathVariable UUID idQuerubito);
+
+	@DeleteMapping(value = "/{idQuerubito}")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	void deletaQuerubitoClienteComId(@PathVariable UUID idCliente, @PathVariable UUID idPet);
 }

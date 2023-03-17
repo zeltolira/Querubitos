@@ -14,4 +14,5 @@ public interface QuerubitoService {
 	QuerubitoResponse criaQuerubito(UUID idAdolescente, @Valid QuerubitoRequest querubitoRequest);
 	List<QuerubitoListResponse> buscaQuerubitosDoAdolescenteComID(UUID idAdolescente);
 	QuerubitoDoAdolescenteDetalhadoResponse buscaQuerubitosDoAdolescenteComID(UUID idAdolescente, UUID idQuerubito);
+	void deletaQuerubitoClienteComId(UUID idAdolescente, UUID idQuerubito);
 }

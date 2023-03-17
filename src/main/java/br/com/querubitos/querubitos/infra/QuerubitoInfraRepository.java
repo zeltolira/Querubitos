@@ -39,7 +39,7 @@ public class QuerubitoInfraRepository implements QuerubitoRepository {
 	public Querubitos buscaQuerubitoPeloId(UUID idQuerubito) {
 		log.info("[inicia] QuerubitoInfraRepository - buscaQuerubitoPeloId");
 		var querubito = querubitoSpringDataJPARepository.findById(idQuerubito)
-				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Querubito não encontrado para o idPet = " + idQuerubito));
+				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Querubito não encontrado para o idQuerubito = " + idQuerubito));
 		log.info("[finaliza] QuerubitoInfraRepository - buscaQuerubitoPeloId");
 		return querubito;
 	}
