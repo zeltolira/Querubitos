@@ -16,6 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.querubitos.adole.application.api.request.AdolescenteAlteracaoRequest;
+import br.com.querubitos.adole.application.api.request.AdolescenteRequest;
+import br.com.querubitos.adole.application.api.response.AdolescenteDetalhadoResponse;
+import br.com.querubitos.adole.application.api.response.AdolescenteListResponse;
+import br.com.querubitos.adole.application.api.response.AdolescenteResponse;
+
 @RestController
 @RequestMapping("/v1/adole")
 public interface AdolescenteAPI {

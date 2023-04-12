@@ -34,4 +34,6 @@ public class QuerubitoAlteracaoRequest {
 	private Integer extra;
 	@NotNull
 	private Integer desobediencia;
+	@NotNull
+	private boolean estudo;
 }

@@ -13,8 +13,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import br.com.querubitos.adole.application.api.AdolescenteAlteracaoRequest;
-import br.com.querubitos.adole.application.api.AdolescenteRequest;
+import br.com.querubitos.adole.application.api.request.AdolescenteAlteracaoRequest;
+import br.com.querubitos.adole.application.api.request.AdolescenteRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

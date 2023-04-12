@@ -1,4 +1,4 @@
-package br.com.querubitos.adole.application.api;
+package br.com.querubitos.adole.application.api.response;
 
 import java.util.UUID;
 

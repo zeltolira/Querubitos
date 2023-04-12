@@ -5,11 +5,11 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import br.com.querubitos.adole.application.api.AdolescenteAlteracaoRequest;
-import br.com.querubitos.adole.application.api.AdolescenteDetalhadoResponse;
-import br.com.querubitos.adole.application.api.AdolescenteListResponse;
-import br.com.querubitos.adole.application.api.AdolescenteRequest;
-import br.com.querubitos.adole.application.api.AdolescenteResponse;
+import br.com.querubitos.adole.application.api.request.AdolescenteAlteracaoRequest;
+import br.com.querubitos.adole.application.api.request.AdolescenteRequest;
+import br.com.querubitos.adole.application.api.response.AdolescenteDetalhadoResponse;
+import br.com.querubitos.adole.application.api.response.AdolescenteListResponse;
+import br.com.querubitos.adole.application.api.response.AdolescenteResponse;
 import br.com.querubitos.adole.application.repository.AdolescenteRepository;
 import br.com.querubitos.adole.domain.Adolescente;
 import lombok.RequiredArgsConstructor;

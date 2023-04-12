@@ -1,4 +1,4 @@
-package br.com.querubitos.adole.application.api;
+package br.com.querubitos.adole.application.api.request;
 
 import java.time.LocalDate;
 
