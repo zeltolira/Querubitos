@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import br.com.querubitos.handler.APIException;
-import br.com.querubitos.querubitos.application.service.QuerubitoRepository;
+import br.com.querubitos.querubitos.application.repository.QuerubitoRepository;
 import br.com.querubitos.querubitos.domain.Querubitos;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

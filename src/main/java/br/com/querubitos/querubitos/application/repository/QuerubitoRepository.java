@@ -1,4 +1,4 @@
-package br.com.querubitos.querubitos.application.service;
+package br.com.querubitos.querubitos.application.repository;
 
 import java.util.List;
 import java.util.UUID;

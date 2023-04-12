@@ -13,6 +13,7 @@ import br.com.querubitos.querubitos.application.api.QuerubitoDoAdolescenteDetalh
 import br.com.querubitos.querubitos.application.api.QuerubitoListResponse;
 import br.com.querubitos.querubitos.application.api.QuerubitoRequest;
 import br.com.querubitos.querubitos.application.api.QuerubitoResponse;
+import br.com.querubitos.querubitos.application.repository.QuerubitoRepository;
 import br.com.querubitos.querubitos.domain.Querubitos;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
