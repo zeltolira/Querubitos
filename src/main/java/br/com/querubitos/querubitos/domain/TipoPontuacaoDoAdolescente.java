@@ -12,8 +12,8 @@ import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-import br.com.querubitos.querubitos.application.api.QuerubitoAlteracaoRequest;
-import br.com.querubitos.querubitos.application.api.QuerubitoRequest;
+import br.com.querubitos.querubitos.application.api.TipoAcaoAlteracaoRequest;
+import br.com.querubitos.querubitos.application.api.TipoAcaoRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -55,7 +55,7 @@ public class TipoPontuacaoDoAdolescente {
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraultimaAlteracao;
 
-	public TipoPontuacaoDoAdolescente(UUID idAdolescente, @Valid QuerubitoRequest querubitoRequest) {
+	public TipoPontuacaoDoAdolescente(UUID idAdolescente, @Valid TipoAcaoRequest querubitoRequest) {
 		this.idAdolescenteRecebedor = idAdolescente;
 		this.estudoDiario = querubitoRequest.getEstudoDiario();
 		this.participacaoClasse = querubitoRequest.getParticipacaoClasse();
@@ -70,7 +70,7 @@ public class TipoPontuacaoDoAdolescente {
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
 
-	public void altera(@Valid QuerubitoAlteracaoRequest querubitoRequest) {
+	public void altera(@Valid TipoAcaoAlteracaoRequest querubitoRequest) {
 		this.estudoDiario = querubitoRequest.getEstudoDiario();
 		this.participacaoClasse = querubitoRequest.getParticipacaoClasse();
 		this.participacaoExternas = querubitoRequest.getParticipacaoExternas();

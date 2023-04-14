@@ -18,20 +18,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/v1/adole/{idAdolescente}/querubito")
-public interface QuerubitoAPI {
+public interface TipoAcaoAPI {
 
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	QuerubitoResponse postQuerubito(@PathVariable UUID idAdolescente,
-			@Valid @RequestBody QuerubitoRequest querubitoRequest);
+	TipoAcaoResponse postQuerubito(@PathVariable UUID idAdolescente,
+			@Valid @RequestBody TipoAcaoRequest querubitoRequest);
 
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
-	List<QuerubitoListResponse> getQuerubitosDoAdolecente(@PathVariable UUID idAdolescente);
+	List<TipoAcaoListResponse> getQuerubitosDoAdolecente(@PathVariable UUID idAdolescente);
 	
 	@GetMapping(value = "/{idQuerubito}")
 	@ResponseStatus(code = HttpStatus.OK)
-	QuerubitoDoAdolescenteDetalhadoResponse getQuerubitoDoAdolescenteAtravesId(@PathVariable UUID idAdolescente, @PathVariable UUID idQuerubito);
+	TipoAcaoDoAdolescenteDetalhadoResponse getQuerubitoDoAdolescenteAtravesId(@PathVariable UUID idAdolescente, @PathVariable UUID idQuerubito);
 
 	@DeleteMapping(value = "/{idQuerubito}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
@@ -40,5 +40,5 @@ public interface QuerubitoAPI {
 	@PatchMapping(value = "/{idQuerubito}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	void patchQuerubito(@PathVariable UUID idAdolescente, @PathVariable UUID idQuerubito,
-			@Valid @RequestBody QuerubitoAlteracaoRequest querubitoAlteracaoRequest);
+			@Valid @RequestBody TipoAcaoAlteracaoRequest querubitoAlteracaoRequest);
 }

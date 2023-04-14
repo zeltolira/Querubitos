@@ -8,7 +8,7 @@ import br.com.querubitos.querubitos.domain.TipoPontuacaoDoAdolescente;
 import lombok.Value;
 
 @Value
-public class QuerubitoListResponse {
+public class TipoAcaoListResponse {
 
 		private UUID idTipoPontuacao;
 		private Integer estudoDiario;
@@ -21,13 +21,13 @@ public class QuerubitoListResponse {
 		private Integer extra;
 		private Integer desobediencia;
 			
-		public static List<QuerubitoListResponse> converte(List<TipoPontuacaoDoAdolescente> querubitosDoAdolescente) {
+		public static List<TipoAcaoListResponse> converte(List<TipoPontuacaoDoAdolescente> querubitosDoAdolescente) {
 			return querubitosDoAdolescente.stream()
-					.map(QuerubitoListResponse::new)
+					.map(TipoAcaoListResponse::new)
 					.collect(Collectors.toList());
 		}
 
-		public QuerubitoListResponse(TipoPontuacaoDoAdolescente querubitos) {
+		public TipoAcaoListResponse(TipoPontuacaoDoAdolescente querubitos) {
 			this.idTipoPontuacao = querubitos.getIdTipoPontuacao();
 			this.estudoDiario = querubitos.getEstudoDiario();
 			this.participacaoExternas = querubitos.getParticipacaoExternas();

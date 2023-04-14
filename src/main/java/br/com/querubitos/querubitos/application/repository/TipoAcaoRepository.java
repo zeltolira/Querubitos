@@ -5,7 +5,7 @@ import java.util.UUID;
 
 import br.com.querubitos.querubitos.domain.TipoPontuacaoDoAdolescente;
 
-public interface QuerubitoRepository {
+public interface TipoAcaoRepository {
 	TipoPontuacaoDoAdolescente salvaQuerubito(TipoPontuacaoDoAdolescente querubito);
 	List<TipoPontuacaoDoAdolescente> buscaQuerubitosDoAdolescenteComID(UUID idAdolescente);
 	TipoPontuacaoDoAdolescente buscaQuerubitoPeloId(UUID idQuerubito);

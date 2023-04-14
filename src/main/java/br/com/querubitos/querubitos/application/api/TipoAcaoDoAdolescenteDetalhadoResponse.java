@@ -6,7 +6,7 @@ import br.com.querubitos.querubitos.domain.TipoPontuacaoDoAdolescente;
 import lombok.Value;
 
 @Value
-public class QuerubitoDoAdolescenteDetalhadoResponse {
+public class TipoAcaoDoAdolescenteDetalhadoResponse {
 	private UUID idTipoPontuacao;
 	private UUID idAdolescenteRecebedor;
 	private Integer estudoDiario;
@@ -20,7 +20,7 @@ public class QuerubitoDoAdolescenteDetalhadoResponse {
 	private Integer extra;
 	private Integer desobediencia;
 
-	public QuerubitoDoAdolescenteDetalhadoResponse(TipoPontuacaoDoAdolescente querubito) {
+	public TipoAcaoDoAdolescenteDetalhadoResponse(TipoPontuacaoDoAdolescente querubito) {
 		this.idTipoPontuacao = querubito.getIdTipoPontuacao();
 		this.idAdolescenteRecebedor = querubito.getIdAdolescenteRecebedor();
 		this.estudoDiario = querubito.getEstudoDiario();

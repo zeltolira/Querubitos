@@ -7,42 +7,42 @@ import javax.validation.Valid;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.querubitos.querubitos.application.service.QuerubitoService;
+import br.com.querubitos.querubitos.application.service.TipoAcaoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 @RestController
 @Log4j2
 @RequiredArgsConstructor
-public class QuerubitoController implements QuerubitoAPI {
+public class TipoAcaoController implements TipoAcaoAPI {
 
-	private final QuerubitoService querubitoService;
+	private final TipoAcaoService querubitoService;
 
 	@Override
-	public QuerubitoResponse postQuerubito(UUID idAdolescente, @Valid QuerubitoRequest querubitoRequest) {
+	public TipoAcaoResponse postQuerubito(UUID idAdolescente, @Valid TipoAcaoRequest querubitoRequest) {
 		log.info("[inicia] QuerubitoController - postQuerubito");
 		log.info("[idAdolescente] {}, idAdolescente");
-		QuerubitoResponse querubito = querubitoService.criaQuerubito(idAdolescente, querubitoRequest);
+		TipoAcaoResponse querubito = querubitoService.criaQuerubito(idAdolescente, querubitoRequest);
 		log.info("[finaliza] QuerubitoController - postQuerubito");
 		return querubito;
 	}
 
 	@Override
-	public List<QuerubitoListResponse> getQuerubitosDoAdolecente(UUID idAdolescente) {
+	public List<TipoAcaoListResponse> getQuerubitosDoAdolecente(UUID idAdolescente) {
 		// TODO Auto-generated method stub
 		log.info("[inicia] QuerubitoController - getQuerubitosDoAdolecente");
 		log.info("[idAdolescente] {}, idAdolescente");
-		List<QuerubitoListResponse> querubitosDoAdolescente = querubitoService.buscaQuerubitosDoAdolescenteComID(idAdolescente);
+		List<TipoAcaoListResponse> querubitosDoAdolescente = querubitoService.buscaQuerubitosDoAdolescenteComID(idAdolescente);
 		log.info("[finaliza] QuerubitoController - getQuerubitosDoAdolecente");
 		return querubitosDoAdolescente;
 	}
 
 	@Override
-	public QuerubitoDoAdolescenteDetalhadoResponse getQuerubitoDoAdolescenteAtravesId(UUID idAdolescente,
+	public TipoAcaoDoAdolescenteDetalhadoResponse getQuerubitoDoAdolescenteAtravesId(UUID idAdolescente,
 			UUID idQuerubito) {
 		log.info("[inicia] QuerubitoController - getQuerubitoDoAdolescenteAtravesId");
 		log.info("[idAdolescente] {} - [idQuerubito] {} - idAdolescente, idQuerubito");
-		QuerubitoDoAdolescenteDetalhadoResponse querubito = querubitoService.buscaQuerubitosDoAdolescenteComID(idAdolescente, idQuerubito);
+		TipoAcaoDoAdolescenteDetalhadoResponse querubito = querubitoService.buscaQuerubitosDoAdolescenteComID(idAdolescente, idQuerubito);
 		log.info("[finaliza] QuerubitoController - getQuerubitoDoAdolescenteAtravesId");
 		return querubito;
 	}
@@ -57,7 +57,7 @@ public class QuerubitoController implements QuerubitoAPI {
 
 	@Override
 	public void patchQuerubito(UUID idAdolescente, UUID idQuerubito,
-			@Valid QuerubitoAlteracaoRequest querubitoAlteracaoRequest) {
+			@Valid TipoAcaoAlteracaoRequest querubitoAlteracaoRequest) {
 		log.info("[inicia] QuerubitoController - patchQuerubito");
 		log.info("[idAdolescente] {} - [idQuerubito] {} - idAdolescente, idQuerubito");
 		querubitoService.alteraQuerubitosDoAdolescenteComID(idAdolescente, idQuerubito, querubitoAlteracaoRequest);

@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import lombok.Value;
 
 @Value
-public class QuerubitoRequest {
+public class TipoAcaoAlteracaoRequest {
 	@NotNull
 	private Integer estudoDiario;
 	@NotNull
@@ -26,4 +26,6 @@ public class QuerubitoRequest {
 	private Integer extra;
 	@NotNull
 	private Integer desobediencia;
+	@NotNull
+	private boolean estudo;
 }

@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import br.com.querubitos.handler.APIException;
-import br.com.querubitos.querubitos.application.repository.QuerubitoRepository;
+import br.com.querubitos.querubitos.application.repository.TipoAcaoRepository;
 import br.com.querubitos.querubitos.domain.TipoPontuacaoDoAdolescente;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -15,9 +15,9 @@ import lombok.extern.log4j.Log4j2;
 @Repository
 @Log4j2
 @RequiredArgsConstructor
-public class QuerubitoInfraRepository implements QuerubitoRepository {
+public class TipoAcaoInfraRepository implements TipoAcaoRepository {
 
-	private final QuerubitoSpringDataJPARepository querubitoSpringDataJPARepository; 
+	private final TipoAcaoSpringDataJPARepository querubitoSpringDataJPARepository; 
 	
 	@Override
 	public TipoPontuacaoDoAdolescente salvaQuerubito(TipoPontuacaoDoAdolescente querubito) {
