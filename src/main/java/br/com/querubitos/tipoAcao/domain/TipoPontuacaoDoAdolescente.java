@@ -1,4 +1,4 @@
-package br.com.querubitos.querubitos.domain;
+package br.com.querubitos.tipoAcao.domain;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -12,8 +12,8 @@ import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-import br.com.querubitos.querubitos.application.api.TipoAcaoAlteracaoRequest;
-import br.com.querubitos.querubitos.application.api.TipoAcaoRequest;
+import br.com.querubitos.tipoAcao.application.api.TipoAcaoAlteracaoRequest;
+import br.com.querubitos.tipoAcao.application.api.TipoAcaoRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

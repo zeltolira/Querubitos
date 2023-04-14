@@ -1,4 +1,4 @@
-package br.com.querubitos.querubitos.application.service;
+package br.com.querubitos.tipoAcao.application.service;
 
 import java.util.List;
 import java.util.UUID;
@@ -8,13 +8,13 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import br.com.querubitos.adole.application.service.AdolescenteService;
-import br.com.querubitos.querubitos.application.api.TipoAcaoAlteracaoRequest;
-import br.com.querubitos.querubitos.application.api.TipoAcaoDoAdolescenteDetalhadoResponse;
-import br.com.querubitos.querubitos.application.api.TipoAcaoListResponse;
-import br.com.querubitos.querubitos.application.api.TipoAcaoRequest;
-import br.com.querubitos.querubitos.application.api.TipoAcaoResponse;
-import br.com.querubitos.querubitos.application.repository.TipoAcaoRepository;
-import br.com.querubitos.querubitos.domain.TipoPontuacaoDoAdolescente;
+import br.com.querubitos.tipoAcao.application.api.TipoAcaoAlteracaoRequest;
+import br.com.querubitos.tipoAcao.application.api.TipoAcaoDoAdolescenteDetalhadoResponse;
+import br.com.querubitos.tipoAcao.application.api.TipoAcaoListResponse;
+import br.com.querubitos.tipoAcao.application.api.TipoAcaoRequest;
+import br.com.querubitos.tipoAcao.application.api.TipoAcaoResponse;
+import br.com.querubitos.tipoAcao.application.repository.TipoAcaoRepository;
+import br.com.querubitos.tipoAcao.domain.TipoPontuacaoDoAdolescente;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 

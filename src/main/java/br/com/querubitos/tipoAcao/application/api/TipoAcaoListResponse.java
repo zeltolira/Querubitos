@@ -1,10 +1,10 @@
-package br.com.querubitos.querubitos.application.api;
+package br.com.querubitos.tipoAcao.application.api;
 
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import br.com.querubitos.querubitos.domain.TipoPontuacaoDoAdolescente;
+import br.com.querubitos.tipoAcao.domain.TipoPontuacaoDoAdolescente;
 import lombok.Value;
 
 @Value

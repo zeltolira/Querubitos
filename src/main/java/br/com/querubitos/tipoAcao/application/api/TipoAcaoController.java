@@ -1,4 +1,4 @@
-package br.com.querubitos.querubitos.application.api;
+package br.com.querubitos.tipoAcao.application.api;
 
 import java.util.List;
 import java.util.UUID;
@@ -7,7 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.querubitos.querubitos.application.service.TipoAcaoService;
+import br.com.querubitos.tipoAcao.application.service.TipoAcaoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 

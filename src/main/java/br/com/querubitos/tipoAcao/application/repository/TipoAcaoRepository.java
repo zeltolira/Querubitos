@@ -1,9 +1,9 @@
-package br.com.querubitos.querubitos.application.repository;
+package br.com.querubitos.tipoAcao.application.repository;
 
 import java.util.List;
 import java.util.UUID;
 
-import br.com.querubitos.querubitos.domain.TipoPontuacaoDoAdolescente;
+import br.com.querubitos.tipoAcao.domain.TipoPontuacaoDoAdolescente;
 
 public interface TipoAcaoRepository {
 	TipoPontuacaoDoAdolescente salvaQuerubito(TipoPontuacaoDoAdolescente querubito);

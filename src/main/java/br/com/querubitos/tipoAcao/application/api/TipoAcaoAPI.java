@@ -1,4 +1,4 @@
-package br.com.querubitos.querubitos.application.api;
+package br.com.querubitos.tipoAcao.application.api;
 
 import java.util.List;
 import java.util.UUID;
