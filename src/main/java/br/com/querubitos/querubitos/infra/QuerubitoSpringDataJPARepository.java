@@ -5,8 +5,8 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.querubitos.querubitos.domain.Querubitos;
+import br.com.querubitos.querubitos.domain.TipoPontuacaoDoAdolescente;
 
-public interface QuerubitoSpringDataJPARepository extends JpaRepository<Querubitos, UUID>{
-	List<Querubitos> findByIdAdolescenteRecebedor(UUID idAdolescenteRecebedor);
+public interface QuerubitoSpringDataJPARepository extends JpaRepository<TipoPontuacaoDoAdolescente, UUID>{
+	List<TipoPontuacaoDoAdolescente> findByIdAdolescenteRecebedor(UUID idAdolescenteRecebedor);
 }

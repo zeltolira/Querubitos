@@ -4,38 +4,31 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import br.com.querubitos.querubitos.domain.EstudoDiario;
-import br.com.querubitos.querubitos.domain.Intercambio;
-import br.com.querubitos.querubitos.domain.ParticipacaoCultos;
-import br.com.querubitos.querubitos.domain.ParticipacaoDesafios;
-import br.com.querubitos.querubitos.domain.ParticipacaoExternas;
-import br.com.querubitos.querubitos.domain.Querubitos;
-import br.com.querubitos.querubitos.domain.Quiz;
-import br.com.querubitos.querubitos.domain.Visitantes_amigos;
+import br.com.querubitos.querubitos.domain.TipoPontuacaoDoAdolescente;
 import lombok.Value;
 
 @Value
 public class QuerubitoListResponse {
 
-		private UUID idQuerubito;
-		private EstudoDiario estudoDiario;
-		private ParticipacaoExternas participacaoExternas;
-		private ParticipacaoDesafios participacaoDesafios;
-		private ParticipacaoCultos participacaoCultos;
-		private Quiz quiz;
-		private Visitantes_amigos visitantes_amigos;
-		private Intercambio intercambio;
+		private UUID idTipoPontuacao;
+		private Integer estudoDiario;
+		private Integer participacaoExternas;
+		private Integer participacaoDesafios;
+		private Integer participacaoCultos;
+		private Integer quiz;
+		private Integer visitantes_amigos;
+		private Integer intercambio;
 		private Integer extra;
 		private Integer desobediencia;
 			
-		public static List<QuerubitoListResponse> converte(List<Querubitos> querubitosDoAdolescente) {
+		public static List<QuerubitoListResponse> converte(List<TipoPontuacaoDoAdolescente> querubitosDoAdolescente) {
 			return querubitosDoAdolescente.stream()
 					.map(QuerubitoListResponse::new)
 					.collect(Collectors.toList());
 		}
 
-		public QuerubitoListResponse(Querubitos querubitos) {
-			this.idQuerubito = querubitos.getIdQuerubito();
+		public QuerubitoListResponse(TipoPontuacaoDoAdolescente querubitos) {
+			this.idTipoPontuacao = querubitos.getIdTipoPontuacao();
 			this.estudoDiario = querubitos.getEstudoDiario();
 			this.participacaoExternas = querubitos.getParticipacaoExternas();
 			this.participacaoDesafios = querubitos.getParticipacaoDesafios();

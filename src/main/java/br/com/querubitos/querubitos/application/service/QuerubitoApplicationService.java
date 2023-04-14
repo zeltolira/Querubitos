@@ -14,7 +14,7 @@ import br.com.querubitos.querubitos.application.api.QuerubitoListResponse;
 import br.com.querubitos.querubitos.application.api.QuerubitoRequest;
 import br.com.querubitos.querubitos.application.api.QuerubitoResponse;
 import br.com.querubitos.querubitos.application.repository.QuerubitoRepository;
-import br.com.querubitos.querubitos.domain.Querubitos;
+import br.com.querubitos.querubitos.domain.TipoPontuacaoDoAdolescente;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -29,16 +29,16 @@ public class QuerubitoApplicationService implements QuerubitoService {
 	public QuerubitoResponse criaQuerubito(UUID idAdolescente, @Valid QuerubitoRequest querubitoRequest) {
 		log.info("[inicia] QuerubitoApplicationService - criaQuerubito");
 		adolescenteService.buscaAdolescenteAtravesId(idAdolescente);
-		Querubitos querubito = querubitoRepository.salvaQuerubito(new Querubitos(idAdolescente, querubitoRequest));
+		TipoPontuacaoDoAdolescente querubito = querubitoRepository.salvaQuerubito(new TipoPontuacaoDoAdolescente(idAdolescente, querubitoRequest));
 		log.info("[finaliza] QuerubitoApplicationService - criaQuerubito");
-		return new QuerubitoResponse(querubito.getIdQuerubito());
+		return new QuerubitoResponse(querubito.getIdTipoPontuacao());
 	}
 
 	@Override
 	public List<QuerubitoListResponse> buscaQuerubitosDoAdolescenteComID(UUID idAdolescente) {
 		log.info("[inicia] QuerubitoApplicationService - buscaQuerubitosDoAdolescenteComID");
 		adolescenteService.buscaAdolescenteAtravesId(idAdolescente);
-		List<Querubitos> querubitosDoAdolescente = querubitoRepository.buscaQuerubitosDoAdolescenteComID(idAdolescente); 
+		List<TipoPontuacaoDoAdolescente> querubitosDoAdolescente = querubitoRepository.buscaQuerubitosDoAdolescenteComID(idAdolescente); 
 		log.info("[finaliza] QuerubitoApplicationService - buscaQuerubitosDoAdolescenteComID");
 		return QuerubitoListResponse.converte(querubitosDoAdolescente);
 	}
@@ -48,7 +48,7 @@ public class QuerubitoApplicationService implements QuerubitoService {
 			UUID idQuerubito) {
 		log.info("[inicia] QuerubitoApplicationService - buscaQuerubitosDoAdolescenteComID");
 		adolescenteService.buscaAdolescenteAtravesId(idAdolescente);
-		Querubitos querubito = querubitoRepository.buscaQuerubitoPeloId(idQuerubito);
+		TipoPontuacaoDoAdolescente querubito = querubitoRepository.buscaQuerubitoPeloId(idQuerubito);
 		log.info("[finaliza] QuerubitoApplicationService - buscaQuerubitosDoAdolescenteComID");
 		return new QuerubitoDoAdolescenteDetalhadoResponse(querubito);
 	}
@@ -57,7 +57,7 @@ public class QuerubitoApplicationService implements QuerubitoService {
 	public void deletaQuerubitoClienteComId(UUID idAdolescente, UUID idQuerubito) {
 		log.info("[inicia] QuerubitoApplicationService - deletaQuerubitoClienteComId");
 		adolescenteService.buscaAdolescenteAtravesId(idAdolescente);
-		Querubitos querubito = querubitoRepository.buscaQuerubitoPeloId(idQuerubito);
+		TipoPontuacaoDoAdolescente querubito = querubitoRepository.buscaQuerubitoPeloId(idQuerubito);
 		querubitoRepository.deletaQuerubito(querubito);
 		log.info("[finaliza] QuerubitoApplicationService - deletaQuerubitoClienteComId");
 		
@@ -68,7 +68,7 @@ public class QuerubitoApplicationService implements QuerubitoService {
 			@Valid QuerubitoAlteracaoRequest querubitoAlteracaoRequest) {
 		log.info("[inicia] QuerubitoApplicationService - alteraQuerubitosDoAdolescenteComID");
 		adolescenteService.buscaAdolescenteAtravesId(idAdolescente);
-		Querubitos querubito = querubitoRepository.buscaQuerubitoPeloId(idQuerubito);
+		TipoPontuacaoDoAdolescente querubito = querubitoRepository.buscaQuerubitoPeloId(idQuerubito);
 		querubito.altera(querubitoAlteracaoRequest);
 		querubitoRepository.salvaQuerubito(querubito);
 		log.info("[finaliza] QuerubitoApplicationService - alteraQuerubitosDoAdolescenteComID");

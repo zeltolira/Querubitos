@@ -2,34 +2,26 @@ package br.com.querubitos.querubitos.application.api;
 
 import javax.validation.constraints.NotNull;
 
-import br.com.querubitos.querubitos.domain.EstudoDiario;
-import br.com.querubitos.querubitos.domain.Intercambio;
-import br.com.querubitos.querubitos.domain.ParticipacaoClasse;
-import br.com.querubitos.querubitos.domain.ParticipacaoCultos;
-import br.com.querubitos.querubitos.domain.ParticipacaoDesafios;
-import br.com.querubitos.querubitos.domain.ParticipacaoExternas;
-import br.com.querubitos.querubitos.domain.Quiz;
-import br.com.querubitos.querubitos.domain.Visitantes_amigos;
 import lombok.Value;
 
 @Value
 public class QuerubitoRequest {
 	@NotNull
-	private EstudoDiario estudoDiario;
+	private Integer estudoDiario;
 	@NotNull
-	private ParticipacaoClasse participacaoClasse;
+	private Integer participacaoClasse;
 	@NotNull
-	private ParticipacaoExternas participacaoExternas;
+	private Integer participacaoExternas;
 	@NotNull
-	private ParticipacaoDesafios participacaoDesafios;
+	private Integer participacaoDesafios;
 	@NotNull
-	private ParticipacaoCultos participacaoCultos;
+	private Integer participacaoCultos;
 	@NotNull
-	private Quiz quiz;
+	private Integer quiz;
 	@NotNull
-	private Visitantes_amigos visitantes_amigos;
+	private Integer visitantes_amigos;
 	@NotNull
-	private Intercambio intercambio;
+	private Integer intercambio;
 	@NotNull
 	private Integer extra;
 	@NotNull

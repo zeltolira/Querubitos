@@ -22,30 +22,30 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Table(name = "querubitos")
-public class Querubitos {
+public class TipoPontuacaoDoAdolescente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(columnDefinition = "uuid", name = "idQuerubito", updatable = false, unique = true, nullable = false)
-	private UUID idQuerubito;
+	private UUID idTipoPontuacao;
 	@NotNull
 	private UUID idAdolescenteRecebedor;
 	@NotNull
-	private EstudoDiario estudoDiario;
+	private Integer estudoDiario = 10;
 	@NotNull
-	private ParticipacaoClasse participacaoClasse;
+	private Integer participacaoClasse = 10;
 	@NotNull
-	private ParticipacaoExternas participacaoExternas;
+	private Integer participacaoExternas = 10;
 	@NotNull
-	private ParticipacaoDesafios participacaoDesafios;
+	private Integer participacaoDesafios = 10;
 	@NotNull
-	private ParticipacaoCultos participacaoCultos;
+	private Integer participacaoCultos = 10;
 	@NotNull
-	private Quiz quiz;
+	private Integer quiz = 10;
 	@NotNull
-	private Visitantes_amigos visitantes_amigos;
+	private Integer visitantes_amigos = 10;
 	@NotNull
-	private Intercambio intercambio;
+	private Integer intercambio = 10;
 	@NotNull
 	private Integer extra;
 	@NotNull
@@ -55,7 +55,7 @@ public class Querubitos {
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraultimaAlteracao;
 
-	public Querubitos(UUID idAdolescente, @Valid QuerubitoRequest querubitoRequest) {
+	public TipoPontuacaoDoAdolescente(UUID idAdolescente, @Valid QuerubitoRequest querubitoRequest) {
 		this.idAdolescenteRecebedor = idAdolescente;
 		this.estudoDiario = querubitoRequest.getEstudoDiario();
 		this.participacaoClasse = querubitoRequest.getParticipacaoClasse();
