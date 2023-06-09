@@ -21,12 +21,12 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-@Table(name = "querubitos")
+@Table(name = "tipoAcao")
 public class TipoPontuacaoDoAdolescente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(columnDefinition = "uuid", name = "idQuerubito", updatable = false, unique = true, nullable = false)
+	@Column(columnDefinition = "uuid", name = "idTipoPontuacao", updatable = false, unique = true, nullable = false)
 	private UUID idTipoPontuacao;
 	@NotNull
 	private UUID idAdolescenteRecebedor;
@@ -55,32 +55,32 @@ public class TipoPontuacaoDoAdolescente {
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraultimaAlteracao;
 
-	public TipoPontuacaoDoAdolescente(UUID idAdolescente, @Valid TipoAcaoRequest querubitoRequest) {
+	public TipoPontuacaoDoAdolescente(UUID idAdolescente, @Valid TipoAcaoRequest tipoAcaoRequest) {
 		this.idAdolescenteRecebedor = idAdolescente;
-		this.estudoDiario = querubitoRequest.getEstudoDiario();
-		this.participacaoClasse = querubitoRequest.getParticipacaoClasse();
-		this.participacaoExternas = querubitoRequest.getParticipacaoExternas();
-		this.participacaoDesafios = querubitoRequest.getParticipacaoDesafios();
-		this.participacaoCultos = querubitoRequest.getParticipacaoCultos();
-		this.quiz = querubitoRequest.getQuiz();
-		this.visitantes_amigos = querubitoRequest.getVisitantes_amigos();
-		this.intercambio = querubitoRequest.getIntercambio();
-		this.extra = querubitoRequest.getExtra();
-		this.desobediencia = querubitoRequest.getDesobediencia();
+		this.estudoDiario = tipoAcaoRequest.getEstudoDiario();
+		this.participacaoClasse = tipoAcaoRequest.getParticipacaoClasse();
+		this.participacaoExternas = tipoAcaoRequest.getParticipacaoExternas();
+		this.participacaoDesafios = tipoAcaoRequest.getParticipacaoDesafios();
+		this.participacaoCultos = tipoAcaoRequest.getParticipacaoCultos();
+		this.quiz = tipoAcaoRequest.getQuiz();
+		this.visitantes_amigos = tipoAcaoRequest.getVisitantes_amigos();
+		this.intercambio = tipoAcaoRequest.getIntercambio();
+		this.extra = tipoAcaoRequest.getExtra();
+		this.desobediencia = tipoAcaoRequest.getDesobediencia();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
 
-	public void altera(@Valid TipoAcaoAlteracaoRequest querubitoRequest) {
-		this.estudoDiario = querubitoRequest.getEstudoDiario();
-		this.participacaoClasse = querubitoRequest.getParticipacaoClasse();
-		this.participacaoExternas = querubitoRequest.getParticipacaoExternas();
-		this.participacaoDesafios = querubitoRequest.getParticipacaoDesafios();
-		this.participacaoCultos = querubitoRequest.getParticipacaoCultos();
-		this.quiz = querubitoRequest.getQuiz();
-		this.visitantes_amigos = querubitoRequest.getVisitantes_amigos();
-		this.intercambio = querubitoRequest.getIntercambio();
-		this.extra = querubitoRequest.getExtra();
-		this.desobediencia = querubitoRequest.getDesobediencia();
+	public void altera(@Valid TipoAcaoAlteracaoRequest tipoAcaoRequest) {
+		this.estudoDiario = tipoAcaoRequest.getEstudoDiario();
+		this.participacaoClasse = tipoAcaoRequest.getParticipacaoClasse();
+		this.participacaoExternas = tipoAcaoRequest.getParticipacaoExternas();
+		this.participacaoDesafios = tipoAcaoRequest.getParticipacaoDesafios();
+		this.participacaoCultos = tipoAcaoRequest.getParticipacaoCultos();
+		this.quiz = tipoAcaoRequest.getQuiz();
+		this.visitantes_amigos = tipoAcaoRequest.getVisitantes_amigos();
+		this.intercambio = tipoAcaoRequest.getIntercambio();
+		this.extra = tipoAcaoRequest.getExtra();
+		this.desobediencia = tipoAcaoRequest.getDesobediencia();
 		this.dataHoraultimaAlteracao = LocalDateTime.now();		
 	}
 }

@@ -16,52 +16,52 @@ import lombok.extern.log4j.Log4j2;
 @RequiredArgsConstructor
 public class TipoAcaoController implements TipoAcaoAPI {
 
-	private final TipoAcaoService querubitoService;
+	private final TipoAcaoService tipoAcaoService;
 
 	@Override
-	public TipoAcaoResponse postQuerubito(UUID idAdolescente, @Valid TipoAcaoRequest querubitoRequest) {
-		log.info("[inicia] QuerubitoController - postQuerubito");
+	public TipoAcaoResponse postTipoAcao(UUID idAdolescente, @Valid TipoAcaoRequest tipoAcaoRequest) {
+		log.info("[inicia] TipoAcaoController - postTipoAcao");
 		log.info("[idAdolescente] {}, idAdolescente");
-		TipoAcaoResponse querubito = querubitoService.criaQuerubito(idAdolescente, querubitoRequest);
-		log.info("[finaliza] QuerubitoController - postQuerubito");
-		return querubito;
+		TipoAcaoResponse postTipoAcao = tipoAcaoService.criaTipoAcao(idAdolescente, tipoAcaoRequest);
+		log.info("[finaliza] TipoAcaoController - postTipoAcao");
+		return postTipoAcao;
 	}
 
 	@Override
-	public List<TipoAcaoListResponse> getQuerubitosDoAdolecente(UUID idAdolescente) {
+	public List<TipoAcaoListResponse> getTipoAcaoDoAdolecente(UUID idAdolescente) {
 		// TODO Auto-generated method stub
-		log.info("[inicia] QuerubitoController - getQuerubitosDoAdolecente");
+		log.info("[inicia] TipoAcaoController - getTipoAcaoDoAdolecente");
 		log.info("[idAdolescente] {}, idAdolescente");
-		List<TipoAcaoListResponse> querubitosDoAdolescente = querubitoService.buscaQuerubitosDoAdolescenteComID(idAdolescente);
-		log.info("[finaliza] QuerubitoController - getQuerubitosDoAdolecente");
-		return querubitosDoAdolescente;
+		List<TipoAcaoListResponse> tipoAcaoDoAdolescente = tipoAcaoService.buscaTipoAcaoDoAdolescenteComID(idAdolescente);
+		log.info("[finaliza] TipoAcaoController - getTipoAcaoDoAdolecente");
+		return tipoAcaoDoAdolescente;
 	}
 
 	@Override
-	public TipoAcaoDoAdolescenteDetalhadoResponse getQuerubitoDoAdolescenteAtravesId(UUID idAdolescente,
-			UUID idQuerubito) {
-		log.info("[inicia] QuerubitoController - getQuerubitoDoAdolescenteAtravesId");
-		log.info("[idAdolescente] {} - [idQuerubito] {} - idAdolescente, idQuerubito");
-		TipoAcaoDoAdolescenteDetalhadoResponse querubito = querubitoService.buscaQuerubitosDoAdolescenteComID(idAdolescente, idQuerubito);
-		log.info("[finaliza] QuerubitoController - getQuerubitoDoAdolescenteAtravesId");
-		return querubito;
+	public TipoAcaoDoAdolescenteDetalhadoResponse getTipoAcaoDoAdolescenteAtravesId(UUID idAdolescente,
+			UUID idTipoAcao) {
+		log.info("[inicia] TipoAcaoController - getTipoAcaoDoAdolescenteAtravesId");
+		log.info("[idAdolescente] {} - [idTipoAcao] {} - idAdolescente, idTipoAcao");
+		TipoAcaoDoAdolescenteDetalhadoResponse tipoAcao = tipoAcaoService.buscaTipoAcaoDoAdolescenteComID(idAdolescente, idTipoAcao);
+		log.info("[finaliza] TipoAcaoController - getTipoAcaoDoAdolescenteAtravesId");
+		return tipoAcao;
 	}
 
 	@Override
-	public void deletaQuerubitoClienteComId(UUID idAdolescente, UUID idQuerubito) {
-			log.info("[inicia] QuerubitoController - deletaQuerubitoClienteAtravesId");
-			log.info("[idAdolescente] {} - [idQuerubito] {} - idAdolescente, idQuerubito");
-			querubitoService.deletaQuerubitoClienteComId(idAdolescente, idQuerubito);
-			log.info("[finaliza] QuerubitoController - deletaQuerubitoClienteAtravesId");		
+	public void deletaTipoAcaoClienteComId(UUID idAdolescente, UUID idTipoAcao) {
+			log.info("[inicia] TipoAcaoController - deletaTipoAcaoClienteComId");
+			log.info("[idAdolescente] {} - [idTipoAcao] {} - idAdolescente, idTipoAcao");
+			tipoAcaoService.deletaTipoAcaoClienteComId(idAdolescente, idTipoAcao);
+			log.info("[finaliza] TipoAcaoController - deletaTipoAcaoClienteComId");		
 	}
 
 	@Override
-	public void patchQuerubito(UUID idAdolescente, UUID idQuerubito,
-			@Valid TipoAcaoAlteracaoRequest querubitoAlteracaoRequest) {
-		log.info("[inicia] QuerubitoController - patchQuerubito");
-		log.info("[idAdolescente] {} - [idQuerubito] {} - idAdolescente, idQuerubito");
-		querubitoService.alteraQuerubitosDoAdolescenteComID(idAdolescente, idQuerubito, querubitoAlteracaoRequest);
-		log.info("[finaliza] QuerubitoController - patchQuerubito");		
+	public void patchTipoAcao(UUID idAdolescente, UUID idTipoAcao,
+			@Valid TipoAcaoAlteracaoRequest tipoAcaoAlteracaoRequest) {
+		log.info("[inicia] TipoAcaoController - patchTipoAcao");
+		log.info("[idAdolescente] {} - [idTipoAcao] {} - idAdolescente, idTipoAcao");
+		tipoAcaoService.alteraTipoAcaoDoAdolescenteComID(idAdolescente, idTipoAcao, tipoAcaoAlteracaoRequest);
+		log.info("[finaliza] TipoAcaoController - patchTipoAcao");		
 	}
 
 }

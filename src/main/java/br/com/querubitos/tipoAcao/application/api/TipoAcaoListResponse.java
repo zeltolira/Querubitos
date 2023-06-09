@@ -21,23 +21,23 @@ public class TipoAcaoListResponse {
 		private Integer extra;
 		private Integer desobediencia;
 			
-		public static List<TipoAcaoListResponse> converte(List<TipoPontuacaoDoAdolescente> querubitosDoAdolescente) {
-			return querubitosDoAdolescente.stream()
+		public static List<TipoAcaoListResponse> converte(List<TipoPontuacaoDoAdolescente> tipoAcaoDoAdolescente) {
+			return tipoAcaoDoAdolescente.stream()
 					.map(TipoAcaoListResponse::new)
 					.collect(Collectors.toList());
 		}
 
-		public TipoAcaoListResponse(TipoPontuacaoDoAdolescente querubitos) {
-			this.idTipoPontuacao = querubitos.getIdTipoPontuacao();
-			this.estudoDiario = querubitos.getEstudoDiario();
-			this.participacaoExternas = querubitos.getParticipacaoExternas();
-			this.participacaoDesafios = querubitos.getParticipacaoDesafios();
-			this.participacaoCultos = querubitos.getParticipacaoCultos();
-			this.quiz = querubitos.getQuiz();
-			this.visitantes_amigos = querubitos.getVisitantes_amigos();
-			this.intercambio = querubitos.getIntercambio();
-			this.extra = querubitos.getExtra();
-			this.desobediencia = querubitos.getDesobediencia();
+		public TipoAcaoListResponse(TipoPontuacaoDoAdolescente tipoAcao) {
+			this.idTipoPontuacao = tipoAcao.getIdTipoPontuacao();
+			this.estudoDiario = tipoAcao.getEstudoDiario();
+			this.participacaoExternas = tipoAcao.getParticipacaoExternas();
+			this.participacaoDesafios = tipoAcao.getParticipacaoDesafios();
+			this.participacaoCultos = tipoAcao.getParticipacaoCultos();
+			this.quiz = tipoAcao.getQuiz();
+			this.visitantes_amigos = tipoAcao.getVisitantes_amigos();
+			this.intercambio = tipoAcao.getIntercambio();
+			this.extra = tipoAcao.getExtra();
+			this.desobediencia = tipoAcao.getDesobediencia();
 		}
 
 }

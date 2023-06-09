@@ -20,18 +20,18 @@ public class TipoAcaoDoAdolescenteDetalhadoResponse {
 	private Integer extra;
 	private Integer desobediencia;
 
-	public TipoAcaoDoAdolescenteDetalhadoResponse(TipoPontuacaoDoAdolescente querubito) {
-		this.idTipoPontuacao = querubito.getIdTipoPontuacao();
-		this.idAdolescenteRecebedor = querubito.getIdAdolescenteRecebedor();
-		this.estudoDiario = querubito.getEstudoDiario();
-		this.participacaoClasse = querubito.getParticipacaoClasse();
-		this.participacaoExternas = querubito.getParticipacaoExternas();
-		this.participacaoDesafios = querubito.getParticipacaoDesafios();
-		this.participacaoCultos = querubito.getParticipacaoCultos();
-		this.quiz = querubito.getQuiz();
-		this.visitantes_amigos = querubito.getVisitantes_amigos();
-		this.intercambio = querubito.getIntercambio();
-		this.extra = querubito.getExtra();
-		this.desobediencia = querubito.getDesobediencia();
+	public TipoAcaoDoAdolescenteDetalhadoResponse(TipoPontuacaoDoAdolescente tipoAcao) {
+		this.idTipoPontuacao = tipoAcao.getIdTipoPontuacao();
+		this.idAdolescenteRecebedor = tipoAcao.getIdAdolescenteRecebedor();
+		this.estudoDiario = tipoAcao.getEstudoDiario();
+		this.participacaoClasse = tipoAcao.getParticipacaoClasse();
+		this.participacaoExternas = tipoAcao.getParticipacaoExternas();
+		this.participacaoDesafios = tipoAcao.getParticipacaoDesafios();
+		this.participacaoCultos = tipoAcao.getParticipacaoCultos();
+		this.quiz = tipoAcao.getQuiz();
+		this.visitantes_amigos = tipoAcao.getVisitantes_amigos();
+		this.intercambio = tipoAcao.getIntercambio();
+		this.extra = tipoAcao.getExtra();
+		this.desobediencia = tipoAcao.getDesobediencia();
 	}
 }

@@ -17,28 +17,28 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/adole/{idAdolescente}/querubito")
+@RequestMapping("/v1/adole/{idAdolescente}/tipoAcao")
 public interface TipoAcaoAPI {
 
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	TipoAcaoResponse postQuerubito(@PathVariable UUID idAdolescente,
-			@Valid @RequestBody TipoAcaoRequest querubitoRequest);
+	TipoAcaoResponse postTipoAcao(@PathVariable UUID idAdolescente,
+			@Valid @RequestBody TipoAcaoRequest tipoAcaoRequest);
 
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
-	List<TipoAcaoListResponse> getQuerubitosDoAdolecente(@PathVariable UUID idAdolescente);
+	List<TipoAcaoListResponse> getTipoAcaoDoAdolecente(@PathVariable UUID idAdolescente);
 	
-	@GetMapping(value = "/{idQuerubito}")
+	@GetMapping(value = "/{idTipoAcao}")
 	@ResponseStatus(code = HttpStatus.OK)
-	TipoAcaoDoAdolescenteDetalhadoResponse getQuerubitoDoAdolescenteAtravesId(@PathVariable UUID idAdolescente, @PathVariable UUID idQuerubito);
+	TipoAcaoDoAdolescenteDetalhadoResponse getTipoAcaoDoAdolescenteAtravesId(@PathVariable UUID idAdolescente, @PathVariable UUID idTipoAcao);
 
-	@DeleteMapping(value = "/{idQuerubito}")
+	@DeleteMapping(value = "/{idTipoAcao}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	void deletaQuerubitoClienteComId(@PathVariable UUID idCliente, @PathVariable UUID idPet);
+	void deletaTipoAcaoClienteComId(@PathVariable UUID idAdolescente, @PathVariable UUID idTipoAcao);
 	
-	@PatchMapping(value = "/{idQuerubito}")
+	@PatchMapping(value = "/{idTipoAcao}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	void patchQuerubito(@PathVariable UUID idAdolescente, @PathVariable UUID idQuerubito,
-			@Valid @RequestBody TipoAcaoAlteracaoRequest querubitoAlteracaoRequest);
+	void patchTipoAcao(@PathVariable UUID idAdolescente, @PathVariable UUID idTipoAcao,
+			@Valid @RequestBody TipoAcaoAlteracaoRequest tipoAcaoAlteracaoRequest);
 }

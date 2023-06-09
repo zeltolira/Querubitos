@@ -20,7 +20,7 @@ public class TipoAcaoInfraRepository implements TipoAcaoRepository {
 	private final TipoAcaoSpringDataJPARepository querubitoSpringDataJPARepository; 
 	
 	@Override
-	public TipoPontuacaoDoAdolescente salvaQuerubito(TipoPontuacaoDoAdolescente querubito) {
+	public TipoPontuacaoDoAdolescente salvaTipoAcao(TipoPontuacaoDoAdolescente querubito) {
 		log.info("[inicia] QuerubitoInfraRepository - salvaQuerubito");
 		querubitoSpringDataJPARepository.save(querubito);
 		log.info("[finaliza] QuerubitoInfraRepository - salvaQuerubito");
@@ -28,7 +28,7 @@ public class TipoAcaoInfraRepository implements TipoAcaoRepository {
 	}
 
 	@Override
-	public List<TipoPontuacaoDoAdolescente> buscaQuerubitosDoAdolescenteComID(UUID idAdolescente) {
+	public List<TipoPontuacaoDoAdolescente> buscaTipoAcaoDoAdolescenteComID(UUID idAdolescente) {
 		log.info("[inicia] QuerubitoInfraRepository - buscaQuerubitosDoAdolescenteComID");
 		var querubitos = querubitoSpringDataJPARepository.findByIdAdolescenteRecebedor(idAdolescente);
 		log.info("[finaliza] QuerubitoInfraRepository - buscaQuerubitosDoAdolescenteComID");
@@ -36,7 +36,7 @@ public class TipoAcaoInfraRepository implements TipoAcaoRepository {
 	}
 
 	@Override
-	public TipoPontuacaoDoAdolescente buscaQuerubitoPeloId(UUID idQuerubito) {
+	public TipoPontuacaoDoAdolescente buscaTipoAcaoPeloId(UUID idQuerubito) {
 		log.info("[inicia] QuerubitoInfraRepository - buscaQuerubitoPeloId");
 		var querubito = querubitoSpringDataJPARepository.findById(idQuerubito)
 				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Querubito não encontrado para o idQuerubito = " + idQuerubito));
@@ -45,7 +45,7 @@ public class TipoAcaoInfraRepository implements TipoAcaoRepository {
 	}
 
 	@Override
-	public void deletaQuerubito(TipoPontuacaoDoAdolescente querubito) {
+	public void deletaTipoAcao(TipoPontuacaoDoAdolescente querubito) {
 		log.info("[inicia] QuerubitoInfraRepository - deletaQuerubito");
 		querubitoSpringDataJPARepository.delete(querubito);
 		log.info("[finaliza] QuerubitoInfraRepository - deletaQuerubito");

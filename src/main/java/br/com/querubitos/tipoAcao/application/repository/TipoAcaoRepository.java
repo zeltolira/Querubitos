@@ -6,8 +6,8 @@ import java.util.UUID;
 import br.com.querubitos.tipoAcao.domain.TipoPontuacaoDoAdolescente;
 
 public interface TipoAcaoRepository {
-	TipoPontuacaoDoAdolescente salvaQuerubito(TipoPontuacaoDoAdolescente querubito);
-	List<TipoPontuacaoDoAdolescente> buscaQuerubitosDoAdolescenteComID(UUID idAdolescente);
-	TipoPontuacaoDoAdolescente buscaQuerubitoPeloId(UUID idQuerubito);
-	void deletaQuerubito(TipoPontuacaoDoAdolescente querubito);
+	TipoPontuacaoDoAdolescente salvaTipoAcao(TipoPontuacaoDoAdolescente tipoAcao);
+	List<TipoPontuacaoDoAdolescente> buscaTipoAcaoDoAdolescenteComID(UUID idAdolescente);
+	TipoPontuacaoDoAdolescente buscaTipoAcaoPeloId(UUID idTipoAcao);
+	void deletaTipoAcao(TipoPontuacaoDoAdolescente tipoAcao);
 }

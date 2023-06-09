@@ -6,5 +6,5 @@ import lombok.Value;
 
 @Value
 public class TipoAcaoResponse {
-	private UUID idQuerubito;
+	private UUID idTipoAcao;
 }

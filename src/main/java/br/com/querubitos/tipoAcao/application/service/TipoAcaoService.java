@@ -12,10 +12,10 @@ import br.com.querubitos.tipoAcao.application.api.TipoAcaoRequest;
 import br.com.querubitos.tipoAcao.application.api.TipoAcaoResponse;
 
 public interface TipoAcaoService {
-	TipoAcaoResponse criaQuerubito(UUID idAdolescente, @Valid TipoAcaoRequest querubitoRequest);
-	List<TipoAcaoListResponse> buscaQuerubitosDoAdolescenteComID(UUID idAdolescente);
-	TipoAcaoDoAdolescenteDetalhadoResponse buscaQuerubitosDoAdolescenteComID(UUID idAdolescente, UUID idQuerubito);
-	void deletaQuerubitoClienteComId(UUID idAdolescente, UUID idQuerubito);
-	void alteraQuerubitosDoAdolescenteComID(UUID idAdolescente, UUID idQuerubito,
-			@Valid TipoAcaoAlteracaoRequest querubitoAlteracaoRequest);
+	TipoAcaoResponse criaTipoAcao(UUID idAdolescente, @Valid TipoAcaoRequest tipoAcaoRequest);
+	List<TipoAcaoListResponse> buscaTipoAcaoDoAdolescenteComID(UUID idAdolescente);
+	TipoAcaoDoAdolescenteDetalhadoResponse buscaTipoAcaoDoAdolescenteComID(UUID idAdolescente, UUID idTipoAcao);
+	void deletaTipoAcaoClienteComId(UUID idAdolescente, UUID idTipoAcao);
+	void alteraTipoAcaoDoAdolescenteComID(UUID idAdolescente, UUID idTipoAcao,
+			@Valid TipoAcaoAlteracaoRequest tipoAcaoAlteracaoRequest);
 }
